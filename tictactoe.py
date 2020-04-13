@@ -138,7 +138,6 @@ def max_value(board):
     v = float('-inf')
     move = None
     for action in actions(board):
-        #res, act = min_value(result(board, action))
         # v = max(v, min_value(result(board, action)))
         aux, act = min_value(result(board, action))
         if aux > v:
@@ -157,7 +156,6 @@ def min_value(board):
     v = float('inf')
     move = None
     for action in actions(board):
-        #res, act = min_value(result(board, action))
         # v = max(v, min_value(result(board, action)))
         aux, act = max_value(result(board, action))
         if aux < v:
@@ -167,10 +165,4 @@ def min_value(board):
                 return v, move
 
     return v, move
-    # if terminal(board):
-    #     return utility(board)
-
-    # v = float('inf')
-    # for action in actions(board):
-    #     v = min(v, max_value(result(board, action)))
-    # return v
+    
