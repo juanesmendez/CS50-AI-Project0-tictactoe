@@ -144,6 +144,8 @@ def max_value(board):
         if aux > v:
             v = aux
             move = action
+            if v == 1:
+                return v, move
 
     return v, move
 
@@ -161,6 +163,8 @@ def min_value(board):
         if aux < v:
             v = aux
             move = action
+            if v == -1:
+                return v, move
 
     return v, move
     # if terminal(board):
