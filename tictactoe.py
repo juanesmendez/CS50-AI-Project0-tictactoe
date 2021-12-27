@@ -67,27 +67,35 @@ def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
-    # Check rows
-    if all(i == board[0][0] for i in board[0]):
+    
+    if(board[0][0] is not None and board[0][0] == board[0][1] and board[0][1] == board[0][2]):
+        # print('1')
         return board[0][0]
-    elif all(i == board[1][0] for i in board[1]):
+    elif(board[1][0] is not None and board[1][0] == board[1][1] and board[1][1] == board[1][2]):
+        # print('2')
         return board[1][0]
-    elif all(i == board[2][0] for i in board[2]):
+    elif(board[2][0] is not None and board[2][0] == board[2][1] and board[2][1] == board[2][2]):
+        # print('3')
         return board[2][0]
-    # Check columns
-    elif board[0][0] == board[1][0] and board[1][0] == board[2][0]:
+    elif(board[0][0] is not None and board[0][0] == board[1][0] and board[1][0] == board[2][0]):
+        # print('4')
         return board[0][0]
-    elif board[0][1] == board[1][1] and board[1][1] == board[2][1]:
+    elif(board[0][1] is not None and board[0][1] == board[1][1] and board[1][1] == board[2][1]):
+        # print('5', 'Board ', board[0][2])
         return board[0][1]
-    elif board[0][2] == board[1][2] and board[1][2] == board[2][2]:
+    elif(board[0][2] is not None and board[0][2] == board[1][2] and board[1][2] == board[2][2]):
+        # print("6")
         return board[0][2]
-    # Check diagonals
-    elif board[0][0] == board[1][1] and board[1][1] == board[2][2]:
+    elif(board[0][0] is not None and board[0][0] == board[1][1] and board[1][1] == board[2][2]):
+        # print('7')
         return board[0][0]
-    elif board[0][2] == board[1][1] and board[1][1] == board[2][0]:
-        return board[0][2]
+    elif(board[0][2] is not None and board[0][2] == board[1][1] and board[1][1] == board[2][0]):
+        # print('8')
+        return board[0][2]    
     else:
+        # print('9')
         return None
+
 
 
 def terminal(board):
